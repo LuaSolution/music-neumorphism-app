@@ -1,22 +1,23 @@
-import React, {useState} from "react";
-import {ThemeProvider} from "styled-components";
-import {Globalstyles} from "./components/Globalstyles";
-import {lightTheme, darkTheme} from "./components/Themes"
+import React, {useContext} from "react";
+import styled from "styled-components";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./components/Home";
+import {ThemeContext} from "./Context/ThemeContext";
+import BodyContent from "./components/Layout/BodyContent";
 
 const App = () => {
-    const [theme, setTheme] = useState('light');
-    const themeToggler = () => {
-        theme === 'light' ? setTheme('dark') : setTheme('light')
-    }
-
     return (
-        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-            <Globalstyles/>
-            <button onClick={themeToggler}>Switch Theme</button>
-            <Home />
-        </ThemeProvider>
+        <ThemeContext>
+            <BodyContent>
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                    </Switch>
+                </BrowserRouter>
+            </BodyContent>
+        </ThemeContext>
 
     );
 };
+
 export default App;
