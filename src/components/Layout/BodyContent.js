@@ -1,5 +1,5 @@
+import React, {useContext} from "react";
 import styled from "styled-components";
-import {useContext} from "react";
 import {MyContext} from "../../Context/ThemeContext";
 
 export default function BodyContent({children}) {
@@ -11,8 +11,8 @@ export default function BodyContent({children}) {
 
 const Body = styled.div`
     min-height: 100vh;
-    background-color: ${({theme}) => {
-        console.log(theme, 9999);
-        return 'red'
-}}
+    transition: 0.5s all;
+    background: ${({theme}) => theme.darkMode ? theme.backgroundDark : theme.backgroundLight};
+    padding-top: 39px;
+    padding-bottom: 39px;
 `

@@ -1,5 +1,4 @@
-import React, {useContext} from "react";
-import styled from "styled-components";
+import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./components/Home";
 import {ThemeContext} from "./Context/ThemeContext";
