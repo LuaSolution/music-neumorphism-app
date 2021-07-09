@@ -1,0 +1,146 @@
+.header-detail-listen{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-top: 35px;
+
+  .box-circle-listen{
+    width: 106px;
+    height: 106px;
+    background: #423642;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .dot-item{
+      background: linear-gradient(180deg, #51BECD 0%, #0B5D68 100%);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+    }
+  }
+  .text-box {
+    flex-basis: 155px;
+  }
+}
+
+.text-color-1{
+  font-size: 20px;
+  color: #E8E5E5;;
+  font-family: 'Montserrat-Regular', serif;
+  font-weight: bold;
+
+}
+.text-color-2{
+  font-size: 18px;
+  color: #797A80;
+  font-family: 'Montserrat-Regular', serif;
+}
+
+.text-color-3{
+  font-size: 18px;
+  color: #B4B5B8;
+  font-family: 'Montserrat-Regular', serif;
+  font-weight: bold;
+
+}
+
+.row-icon-image{
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 59px;
+  .image-item{
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    img{
+    }
+  }
+}
+
+.row-progress-time-line{
+  padding-left: 35px;
+  padding-right: 35px;
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+
+  .label-time-now{
+    color: #797A80;
+    font-size: 16px;
+    font-family: 'Montserrat-Regular', serif;
+    font-weight: bold;
+  }
+  .box-progress-content{
+    padding-left: 17px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .label-time-right{
+      color: #797A80;
+      font-size: 16px;
+      font-family: 'Montserrat-Regular', serif;
+      font-weight: bold;
+    }
+    .ant-progress-inner{
+      background-color: #1E1F23;
+      border-radius: 10px;
+      height: 12px;
+      padding: 2px;
+      .ant-progress-bg{
+        height: 100% !important;
+        background: linear-gradient(270deg, #51BECD 0%, #0B5D68 98.21%);
+      }
+    }
+  }
+}
+
+.box-content-list-music{
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 50px;
+
+  .list-item-music{
+    max-height: 445px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+
+    .item-music-detail{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding-left: 10px;
+      padding-right: 10px;
+      .key-item{
+        flex-basis: 59px;
+      }
+      .box-title-item{
+        flex-basis: 235px;
+        .title-item{
+
+        }
+        .author-item{
+
+        }
+      }
+    }
+  }
+}

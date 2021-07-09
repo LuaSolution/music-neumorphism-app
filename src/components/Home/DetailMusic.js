@@ -3,6 +3,8 @@ import {SearchOutlined} from '@ant-design/icons';
 import HeaderDetail from './DetailMusic/HeaderDetail';
 import styled from 'styled-components';
 import {MyContext} from "../../Context/ThemeContext";
+import ProgressTimeLine from "./DetailMusic/ProgressTimeLine";
+import ListMusicItem from "./DetailMusic/ListMusicItem";
 
 export default function DetailMusic(){
     const { theme } = useContext(MyContext)
@@ -12,6 +14,8 @@ export default function DetailMusic(){
             <IconSearch><SearchOutlined /></IconSearch>
         </BoxSearch>
         <HeaderDetail />
+        <ProgressTimeLine />
+        <ListMusicItem />
     </BoxDetailMusic>
 }
 

@@ -1,10 +1,13 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
 import {MyContext} from "../../Context/ThemeContext";
+import HeaderLiveMusic from "./ListMusic/HeaderLiveMusic";
 
 export default function ListMusic(){
     const { theme } = useContext(MyContext)
-    return <BoxListMusic theme={theme}>111</BoxListMusic>
+    return <BoxListMusic theme={theme}>
+        <HeaderLiveMusic />
+    </BoxListMusic>
 }
 
 const BoxListMusic = styled.div`
