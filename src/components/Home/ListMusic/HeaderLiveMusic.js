@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default function HeaderLiveMusic(){
     return <div>
         <div>Play list “Top 100”</div>
