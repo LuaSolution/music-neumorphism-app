@@ -7,8 +7,8 @@ export default function ProgressTimeLine(){
         <div className="row-progress-time-line">
             <div className="label-time-now">02:23</div>
             <div className="box-progress-content">
-                <Progress percent={30} format={(percent, successPercent) => {
-                    return <div className="label-time-right">{percent}</div>
+                <Progress percent={30}  format={(percent, successPercent) => {
+                    return <div className="label-time-right">03:23</div>
                 }} />
             </div>
         </div>
