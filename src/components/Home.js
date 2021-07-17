@@ -72,6 +72,7 @@ const CircleMiddle = styled.div`
     
     @media (max-width: 1100px){
         height: auto;
+        width: 100%;
     }
 `
 
@@ -87,6 +88,13 @@ const ButtonSetting = styled.button`
     bottom: 107px;
     right: -87px;
     cursor: pointer;
+    
+    @media (max-width: 1100px){
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1111;
+    }
 `
 
 const BoxModalSetting = styled.div`

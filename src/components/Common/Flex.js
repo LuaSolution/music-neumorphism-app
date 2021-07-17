@@ -16,6 +16,8 @@ const Flex = styled.div`
     
     @media (max-width: 1100px){
         flex-wrap: wrap;
+        width: 100%;
+        zoom: 60%;
     }
 `
 export default Flex;

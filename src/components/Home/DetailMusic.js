@@ -30,6 +30,7 @@ const BoxDetailMusic = styled.div`
     @media (max-width: 1100px){
         flex-basis: 100%;
         margin-bottom: 40px;
+        width: 100%;
     }
 `
 
