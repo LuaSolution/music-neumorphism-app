@@ -5,6 +5,8 @@ import WaveLine from '../../../assets/img/wave-line.png';
 import volumeFull from '../../../assets/img/volume_full.svg';
 import minusIcon from '../../../assets/img/minus.png';
 import plusIcon from '../../../assets/img/plus.png';
+import arrowLeft from '../../../assets/img/arrow-left.svg';
+import arrowRight from '../../../assets/img/arrow-right.svg';
 import {Dropdown, Slider} from "antd";
 
 export default function HeaderLiveMusic() {
@@ -42,6 +44,13 @@ export default function HeaderLiveMusic() {
                 <NumberTotal>59</NumberTotal>
             </BoxNumberTotal>
             <IconVolume><img src={plusIcon} alt={""}/></IconVolume>
+        </BoxIconVolume>
+        <BoxIconVolume>
+            <IconArrow><img src={arrowLeft} alt={""}/></IconArrow>
+            <BoxPlayIcon>
+                <IconPlay>59</IconPlay>
+            </BoxPlayIcon>
+            <IconArrow><img src={arrowRight} alt={""}/></IconArrow>
         </BoxIconVolume>
     </div>
 }
@@ -131,7 +140,7 @@ const BoxIconVolume = styled.div`
 
 const IconVolume = styled.div`
     background: #261E26;
-    box-shadow: -5px -5px 10px 0px rgb(70 104 103 / 61%);
+    box-shadow: 5px 7px 10px -1px rgba(39, 26, 44, 0.97);
     width: 36px;
     height: 36px;
     display: flex;
@@ -139,6 +148,16 @@ const IconVolume = styled.div`
     justify-content: center;
     border-radius: 50%;
     cursor: pointer;
+    position: relative;
+    
+    &::after {
+        content: " ";
+        width: 100%;
+        box-shadow: -5px -5px 10px 0px rgb(70 104 103 / 61%);
+        height: 100%;
+        position: absolute;
+        border-radius: 50%;
+    }
 `
 
 const BoxNumberTotal = styled.div`
@@ -165,4 +184,64 @@ const NumberTotal = styled.div`
     align-items: center;
     justify-content: center;
     font-weight: bold;
+`
+
+const IconArrow = styled.div`
+    background: #261E26;
+    box-shadow: 5px 7px 10px -1px rgba(39, 26, 44, 0.97);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    
+    &::after {
+        content: " ";
+        width: 100%;
+        box-shadow: -5px -5px 10px 0px rgb(70 104 103 / 61%);
+        height: 100%;
+        position: absolute;
+        border-radius: 50%;
+    }
+`
+
+
+const BoxPlayIcon = styled.div`
+    background: linear-gradient(140.17deg, #251b25 16.43%, #423742 85.15%);
+    width: 77px;
+    height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 32px;
+    margin-right: 32px;
+    padding: 2px;
+`
+
+const IconPlay = styled.div`
+    background: #261E26;
+    box-shadow: 5px 7px 10px -1px rgba(39, 26, 44, 0.97);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    color: #4B9AA5;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: relative;
+    
+    &::after {
+        content: " ";
+        width: 100%;
+        box-shadow: -5px -5px 10px 0px rgb(70 104 103 / 61%);
+        height: 100%;
+        position: absolute;
+        border-radius: 50%;
+    }
 `
