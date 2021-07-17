@@ -69,6 +69,10 @@ const CircleMiddle = styled.div`
     align-items: center;
     justify-content: center;
     padding: 46px 38px;
+    
+    @media (max-width: 1100px){
+        height: auto;
+    }
 `
 
 const ButtonSetting = styled.button`

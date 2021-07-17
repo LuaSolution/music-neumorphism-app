@@ -13,5 +13,9 @@ const Flex = styled.div`
     margin:  ${({margin}) => `${margin ? margin : '0'}`};
     padding:  ${({padding}) => `${padding ? padding : '0'}`};
     position:  ${({position}) => `${position ? position : 'unset'}`};
+    
+    @media (max-width: 1100px){
+        flex-wrap: wrap;
+    }
 `
 export default Flex;
