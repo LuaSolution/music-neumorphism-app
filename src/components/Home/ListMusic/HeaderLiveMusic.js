@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import styled from "styled-components";
 import WaveCircle from '../../../assets/img/wave-circle.png';
 import WaveLine from '../../../assets/img/wave-line.png';
@@ -8,9 +8,12 @@ import plusIcon from '../../../assets/img/plus.png';
 import arrowLeft from '../../../assets/img/arrow-left.svg';
 import arrowRight from '../../../assets/img/arrow-right.svg';
 import {Dropdown, Slider} from "antd";
+import {MyContext} from "../../../Context/ThemeContext";
 
 export default function HeaderLiveMusic() {
     const [value, setValue] = useState(30)
+    const [numberVolume, setNumberVolume] = useState(59)
+    const { theme } = useContext(MyContext)
 
     const menu = (
         <div style={{ width: 400, height: 40, backgroundColor: '#ffffff' }}>
@@ -19,10 +22,10 @@ export default function HeaderLiveMusic() {
     );
 
     return <div>
-        <HeaderTitle1>Play list “Top 100”</HeaderTitle1>
-        <NameMusic>Mấy nhịp cầu tre</NameMusic>
-        <AuthorMusic>Hoàng Thi Thơ</AuthorMusic>
-        <BoxWaveCircle>
+        <HeaderTitle1 theme={theme}>Play list “Top 100”</HeaderTitle1>
+        <NameMusic theme={theme}>Mấy nhịp cầu tre</NameMusic>
+        <AuthorMusic theme={theme}>Hoàng Thi Thơ</AuthorMusic>
+        <BoxWaveCircle >
             <img src={WaveCircle} alt=""/>
             <ItemBoxVolume>
                 <BgNumberVolume>
@@ -34,9 +37,9 @@ export default function HeaderLiveMusic() {
             </ItemBoxVolume>
         </BoxWaveCircle>
         <BoxLineWaveTime>
-            <TimeLabel>02:23</TimeLabel>
+            <TimeLabel theme={theme}>02:23</TimeLabel>
             <ImageWave><img src={WaveLine} alt=""/></ImageWave>
-            <TimeLabel>05:00</TimeLabel>
+            <TimeLabel theme={theme}>05:00</TimeLabel>
         </BoxLineWaveTime>
         <BoxIconVolume>
             <IconVolume><img src={minusIcon} alt={""}/></IconVolume>
@@ -46,17 +49,23 @@ export default function HeaderLiveMusic() {
             <IconVolume><img src={plusIcon} alt={""}/></IconVolume>
         </BoxIconVolume>
         <BoxIconVolume>
-            <IconArrow><img src={arrowLeft} alt={""}/></IconArrow>
+            <IconArrow onClick={() => {
+                if(numberVolume < 0) return;
+                setNumberVolume(-1)
+            }}><img src={arrowLeft} alt={""}/></IconArrow>
             <BoxPlayIcon>
-                <IconPlay>59</IconPlay>
+                <IconPlay>{numberVolume}</IconPlay>
             </BoxPlayIcon>
-            <IconArrow><img src={arrowRight} alt={""}/></IconArrow>
+            <IconArrow onClick={() => {
+                if(numberVolume > 100) return;
+                setNumberVolume(+1)
+            }}><img src={arrowRight} alt={""}/></IconArrow>
         </BoxIconVolume>
     </div>
 }
 
 const HeaderTitle1 = styled.div`
-    color: #B4B5B8;
+    color: ${({theme}) => theme.darkMode ? '#B4B5B8' : '#5E5E67'};;
     font-size: 16px;
     font-family: Montserrat-Regular;
     text-align: center;
@@ -64,7 +73,7 @@ const HeaderTitle1 = styled.div`
 `
 
 const NameMusic = styled.div`
-    color: #FFFFFF;
+    color: ${({theme}) => theme.darkMode ? '#FFFFFF' : '#37373C'};
     font-size: 22px;
     font-family: Montserrat-Regular;
     text-align: center;
@@ -72,7 +81,7 @@ const NameMusic = styled.div`
 `
 
 const AuthorMusic = styled.div`
-    color: #EBECF0;
+    color: ${({theme}) => theme.darkMode ? '#EBECF0' : '#5E5E67'};
     font-size: 16px;
     font-family: Montserrat-Regular;
     text-align: center;
@@ -100,7 +109,7 @@ const BgNumberVolume = styled.div`
 `
 
 const BoxNumberVolume = styled.div`
-    color: #8B68CD;
+    color: ${({theme}) => theme.darkMode ? '#8B68CD' : '#797A80'};;
     font-family: Montserrat-Regular;
     background-color: #3d343d;
     border-radius: 50%;

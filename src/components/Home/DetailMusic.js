@@ -9,7 +9,7 @@ import ListMusicItem from "./DetailMusic/ListMusicItem";
 export default function DetailMusic(){
     const { theme } = useContext(MyContext)
     return <BoxDetailMusic theme={theme}>
-        <BoxSearch>
+        <BoxSearch theme={theme}>
             <InputSearch placeholder="Find music" />
             <IconSearch><SearchOutlined /></IconSearch>
         </BoxSearch>
@@ -31,8 +31,9 @@ const BoxDetailMusic = styled.div`
 const BoxSearch = styled.div`
     max-width: 292px;
     margin: auto;
-    background: #443345;
-    box-shadow: inset 5px 6px 5px 1px #462847, inset -5px -6px 8px 1px rgba(70, 104, 103, 0.61);
+    background: ${({ theme }) => theme.darkMode ? '#443345' : '#C0CAD2'};
+    box-shadow: ${({theme}) => theme.darkMode ? 'inset 5px 6px 5px 1px #462847, inset -5px -6px 8px 1px rgba(70, 104, 103, 0.61);' 
+    : 'inset 0px 4px 15px #8F61AD, inset 0px -4px 15px -1px #47B0BE'};
     border-radius: 10px;
     position: relative;
     height: 58px;
